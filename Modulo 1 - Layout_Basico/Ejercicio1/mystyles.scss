@@ -1,0 +1,112 @@
+@use "base" as *;
+
+body{
+  font-family: sans-serif;
+  font-size: $font-size;
+}
+
+.container-1 {
+  max-width: 1200px;
+  margin: 50px auto 30px auto;
+  display: flex;
+  gap: 5px;
+  justify-content: space-evenly;
+
+  .box {
+    padding: 30px 20px;
+  }
+
+  .color-box-text{
+    color: $text-color;
+  }
+
+  .base-color {
+    background-color: $primary-color;
+  }
+}
+
+.container-2 {
+  @extend .container-1;
+  
+  .base-color {
+    background-color: $secondary-color;
+  }
+}
+
+.container-3 {
+  @extend .container-1;
+  
+  .base-color {
+    background-color: $third-color;
+  }
+}
+
+
+@function oscureceColor($color,$valor) {
+  @return darken($color,$valor * 6);
+}
+
+@function aclaraColor($color,$valor) {
+  @return lighten($color,$valor * 6);
+}
+
+$i:1; 
+
+@for $i from 1 through 4 {
+  .container-1 .darken-#{$i} {
+    background-color: oscureceColor($primary-color,$i);
+  }
+  .container-1 .lighten-#{$i} {
+    background-color: aclaraColor($primary-color,$i);
+  }
+  .container-2 .darken-#{$i} {
+    background-color: oscureceColor($secondary-color,$i);
+  }
+  .container-2 .lighten-#{$i} {
+    background-color: aclaraColor($secondary-color,$i);
+  }
+  .container-3 .darken-#{$i} {
+    background-color: oscureceColor($third-color,$i);
+  }
+  .container-3 .lighten-#{$i} {
+    background-color: aclaraColor($third-color,$i);
+  }
+}
+
+/* Otra posibilidad mas automatizada pero con más línea de código, quizá menos óptima*/
+
+// $i:1; 
+
+// @for $i from 1 through 4 {
+
+//   $j:1;
+
+//   @for $j from 1 through 3 {
+
+//     .container-#{$j} .darken-#{$i} {
+
+//       $fondo : background-color;
+//       @if $j == 1 {
+//         $fondo: $primary-color;
+//       } @else if $j == 2 {
+//         $fondo: $secondary-color;
+//       } @else if $j == 3 {
+//         $fondo: $third-color;
+//       } 
+//       background-color: oscureceColor($fondo,$i);
+//     }
+//     .container-#{$j} .lighten-#{$i} {
+
+//       $fondo : background-color;
+//       @if $j == 1 {
+//         $fondo: $primary-color;
+//       } @else if $j == 2 {
+//         $fondo: $secondary-color;
+//       } @else if $j == 3 {
+//         $fondo: $third-color;
+//       } 
+//       background-color: aclaraColor($fondo,$i);
+//     }
+    
+//   }
+// }
