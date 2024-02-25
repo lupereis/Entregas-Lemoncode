@@ -1,0 +1,46 @@
+main {
+    width: 15%;
+    margin: 50px auto;
+}
+
+main div {
+    width: 100%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    text-align: center;
+    border: 1px solid rgb(131, 30, 30);
+}
+
+main div:nth-child(1) {
+    background-color: rgb(221, 88, 88);
+}
+
+main div:nth-child(2) {
+    background-color: rgb(173, 65, 65);
+    font-weight: bold;
+}
+
+main div:nth-child(3) {
+    background-color: rgb(223, 165, 165);
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-style: italic;
+}
+
+main div:nth-child(4) {
+    font-size: 0.9rem;
+    padding: 0 10px;
+    border: none;
+}
+
+div p:nth-child(2) {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+}
+
+main div:nth-child(5) {
+    border: 1px solid rgb(221, 88, 88);
+    box-shadow: 10px 10px 12px black;
+    padding: 10px 15px;
+}

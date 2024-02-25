@@ -1,0 +1,26 @@
+@import url("temaA.css");
+/* @import url("temaB.css"); */
+
+body{
+    box-sizing: content-box;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+}
+
+header {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+hr {
+    width: 10%;
+    height: 2px;
+    background-color: blueviolet;
+    margin: 20px auto;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+}
