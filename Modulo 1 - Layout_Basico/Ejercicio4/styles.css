@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+}
+
+.container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+}
+
+header {
+    background-color: rgb(91, 133, 103);
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 30px 25px 20px;
+}
+
+main {
+    flex: 1;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: min-content;
+    gap: 15px;
+}
+
+.cardContainer {
+    width: 100%;
+    font-size: 0.9rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: start;
+}
+
+.imgEstadio {
+    width: 100%;
+}
+
+.cardContainer h2 {
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 15px 0;
+}
+
+.descripcion {
+    margin: 0;
+    padding-bottom: 10px;
+    min-height: 125px;
+}
+
+.aforo {
+    margin: 0;
+    text-align: end;
+    padding-bottom: 10px;
+}
+
+.aforo span {
+    color: rgb(91, 133, 103);
+}
+
+.cardContainer a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background-color: rgb(91, 133, 103);
+    text-align: center;
+    padding: 5px 0;
+}
+
+.cardContainer a:hover {
+    background-color: rgb(50, 88, 61);
+}
+
+footer {
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 15px 0;
+    background-color: rgb(91, 133, 103);
+    color: white;
+    padding: 5px 0;
+}
+
+@media screen and (max-width:565px){
+    .descripcion {
+        min-height: 90px;
+    }
+}
