@@ -1,0 +1,201 @@
+@use "base" as *;
+
+
+html {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: $font-family;
+    font-size: $font-base-size;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: $primary-color;
+    font-size: $title-font-size;
+    box-sizing: border-box;
+
+    .toolbar {
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 15px;
+        font-size: 1rem;
+
+        input {
+            padding: 5px;
+        }
+    }
+
+    .page-title {
+        color: white;
+        font-weight: bold;
+        padding: 20px 15px;
+        display: flex;
+        align-items: center;
+
+        img {
+            height: 60px;
+            width: 60px;
+            padding-right: 15px;
+        }
+    }
+}
+
+.page-container {
+    background-color: $secondary-color;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 1fr;
+}
+
+nav {
+    background-color: $nav-color;
+
+    .menu-container {
+        position: sticky;
+        top: 0;
+    }
+
+    .menu-title {
+        padding: 15px 0;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;  
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        background-color: $footer-color;
+        width: 100%;
+        margin-bottom: 1px;
+        padding: 12px 8px;
+        box-sizing: border-box;
+        font-size: 1rem;
+
+        &:hover {
+            background-color: $hover-color;
+        }
+    }
+}
+
+main {
+    .list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 10px 15px;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .card {
+        width: 250px;
+        padding: 13px 0;
+        background-color: white;
+        font-size: $font-mini-size;
+        border: 1px solid $nav-color;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: content-box;
+
+        img {
+            width: 96px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .member-name {
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        .temporadas {
+            margin: 0;
+            text-transform: none;
+            font-weight: normal;
+        }
+    }
+}
+
+footer {
+    padding: 10px 15px;
+    background-color: $footer-color;
+    font-size: $font-mini-size;
+}
+
+
+
+@media screen and (max-width:768px) {
+    header {
+        font-size: 1.2rem;
+
+        .toolbar {
+            display:none;
+        }
+    }
+
+    .page-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+    
+    nav {
+        .menu-title {
+            display: none;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 10px;
+        }
+
+        li {
+            width: 20%;
+            margin-bottom: 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+    }
+    
+}
+
+@media screen and (max-width:564px) { 
+    main {    
+        .card {
+            width: 100%;
+            flex-direction: row;
+            justify-content: start;
+            border: none;
+            font-size: 0.9rem;
+
+            img {
+                padding: 0 15px;
+            }
+    
+            .member-name {
+                text-align: left;
+            }
+        }
+    }
+}
