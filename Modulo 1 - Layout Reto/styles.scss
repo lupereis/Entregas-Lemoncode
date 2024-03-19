@@ -1,0 +1,207 @@
+@use "base" as *;
+
+
+/*----- Parámetros generales -----*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $font-family;
+    background-color: $primary-color;
+    color: $text-color;
+    display: flex;
+    flex-direction: column;
+}
+
+/*----- Cabecera -----*/
+
+header {
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    position: sticky;
+    top: 0;
+    background-color: $primary-color;
+
+    /*----- Logo y nombre -----*/
+    .header-logo {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+
+        img {
+            width: auto;
+            max-width: 80px;
+        }
+
+        .platform-title {
+            font-size: 1.4rem;
+        }
+    }
+
+    /*----- Menú -----*/
+    .header-buttons {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        font-size: 0.9rem;
+
+        div {
+            padding: 5px 10px;
+
+            &:hover {
+                background-color: white;
+                color: black;
+                border-radius: 8px;
+            }
+        }
+    }
+}
+
+/*----- Cuerpo -----*/
+
+main {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+
+    .section-title{
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+    }
+
+    #top-text::before {
+        content: "5";
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    /*----- Sección populares -----*/
+    .top {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-bottom: 50px;
+
+        .top-item {
+            min-width: 225px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+    }
+
+    /*----- Sección comedias / Sección dramas -----*/
+    .first, .second{
+        gap: 5px;
+        display: flex;
+        margin-bottom: 50px;
+        align-items: center;
+
+        .item {
+            flex: 1 1 auto;
+            transition: flex 0.3s;
+     
+            img {
+                width: 100%;
+            }
+
+            &:hover { 
+                flex-grow: 2;
+            }
+
+            &:not(:hover) {
+                flex-shrink: 2;
+            }
+        }
+
+    }
+}
+
+/*----- Pie de página -----*/
+
+footer {
+    padding: 8px 20px;
+}
+
+/*----- Media querys -----*/
+
+@media screen and (max-width: 1279px) {
+
+    main {
+
+        .first, .second{
+            flex-wrap: wrap;
+
+            .item{
+                flex-basis: min-content;
+                min-width: 250px;
+
+                &:hover { 
+                    flex-grow: 1.3;
+                }
+    
+                &:not(:hover) {
+                    flex-shrink: 1.3;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+  
+    .platform-title {
+        display: none;
+    }
+        
+    main {
+        #top-text::before {
+            content: "3";
+        }
+        
+        .top {
+            justify-content: start;
+                    
+            .top-item {
+                flex-basis:calc(100% / 3);
+            }
+        
+            @for $i from 1 through 2 {
+                div:nth-child(#{$i}){
+                    display:none;  
+                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 460px) {
+
+    header {
+        justify-content:space-around;
+
+        .header-logo {    
+            img {
+                width: auto;
+                max-width: 130px;
+            }
+        }
+    }
+   
+    main {
+        .top {            
+            flex-direction: column-reverse;
+        }
+    }
+}

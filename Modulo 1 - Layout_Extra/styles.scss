@@ -1,6 +1,6 @@
 @use "base" as *;
 
-
+/* ----- Estilos generales ----- */
 html {
     box-sizing: border-box;
 }
@@ -17,11 +17,14 @@ body {
     box-sizing: border-box;
 }
 
+/* ----- Cabecera ----- */
+
 header {
     background-color: $primary-color;
     font-size: $title-font-size;
     box-sizing: border-box;
 
+    /* ----- Formulario de búsqueda / Nombre usuario ----- */
     .toolbar {
         background-color: white;
         display: flex;
@@ -34,6 +37,7 @@ header {
         }
     }
 
+    /* ----- Escudo y título ----- */
     .page-title {
         color: white;
         font-weight: bold;
@@ -46,9 +50,20 @@ header {
             width: 60px;
             padding-right: 15px;
         }
+
+        p {
+            margin: 0;
+        }
+
+        .subtitle {
+            font-weight: normal;
+            font-size: $font-base-size;
+            margin-top: 8px;
+        }
     }
 }
 
+/* ----- Cuerpo ----- */
 .page-container {
     background-color: $secondary-color;
     flex: 1;
@@ -57,6 +72,7 @@ header {
     grid-template-rows: 1fr;
 }
 
+/* ----- Menú ----- */
 nav {
     background-color: $nav-color;
 
@@ -93,6 +109,7 @@ nav {
     }
 }
 
+/* ----- Contenido del cuerpo ----- */
 main {
     .list {
         display: flex;
@@ -141,13 +158,14 @@ main {
     }
 }
 
+/* ----- Pie ----- */
 footer {
     padding: 10px 15px;
     background-color: $footer-color;
     font-size: $font-mini-size;
 }
 
-
+/* ----- Media querys ----- */
 
 @media screen and (max-width:768px) {
     header {

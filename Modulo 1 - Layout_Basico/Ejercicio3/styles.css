@@ -1,3 +1,5 @@
+/* ----- Estilos generales ----- */
+
 body{
     margin: 0;
     padding: 0;
@@ -11,16 +13,19 @@ body{
     justify-content: space-around;
 }
 
+/* ----- Estilos cabecera ----- */
 header {
     width: 100%;
 }
 
+/* ----- Título ----- */
 header div{
     font-size: 1.5rem;
     font-weight: bold;
     margin: 30px 10px 15px 25px;
 }
 
+/* ----- Menu ----- */
 nav ul {
     display:flex;
     list-style: none;
@@ -42,12 +47,14 @@ nav ul li:hover {
     color: rgb(190, 208, 209);
 }
 
+/* ----- Contenido ----- */
 main {
     background-color: rgb(226, 226, 226);
     flex: 1;
     padding: 30px 15px;
 }
 
+/* ----- Footer ----- */
 footer {
     box-sizing: border-box;
     text-align: center;
@@ -56,6 +63,8 @@ footer {
     background-color: rgb(72, 124, 126);
     color: white;
 }
+
+/* ----- Media querys ----- */
 
 @media screen and (max-width: 640px) {
 

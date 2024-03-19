@@ -1,3 +1,5 @@
+/* ----- Estilos generales ----- */
+
 body {
     margin: 0;
     padding: 0;
@@ -6,6 +8,7 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
+/* ----- Contenedor general ----- */
 .container {
     height: 100%;
     display: grid;
@@ -13,6 +16,7 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
+/* ----- Cabecera ----- */
 header {
     background-color: rgb(91, 133, 103);
     color: white;
@@ -21,6 +25,7 @@ header {
     padding: 30px 25px 20px;
 }
 
+/* ----- Cuerpo ----- */
 main {
     flex: 1;
     padding: 25px;
@@ -30,12 +35,14 @@ main {
     gap: 15px;
 }
 
+/* ----- Contenedor de la tarjeta ----- */
 .cardContainer {
     width: 100%;
     font-size: 0.9rem;
     display: flex;
     flex-flow: column wrap;
     justify-content: start;
+    background-color: #f8f8f8;
 }
 
 .imgEstadio {
@@ -45,19 +52,19 @@ main {
 .cardContainer h2 {
     font-size: 1.1rem;
     margin: 0;
-    padding: 15px 0;
+    padding: 15px 5px;
 }
 
 .descripcion {
     margin: 0;
-    padding-bottom: 10px;
+    padding: 0 5px 10px;
     min-height: 125px;
 }
 
 .aforo {
     margin: 0;
     text-align: end;
-    padding-bottom: 10px;
+    padding: 0 10px 10px 0;
 }
 
 .aforo span {
@@ -77,6 +84,7 @@ main {
     background-color: rgb(50, 88, 61);
 }
 
+/* ----- Pie de página ----- */
 footer {
     box-sizing: border-box;
     text-align: center;
@@ -87,7 +95,13 @@ footer {
     padding: 5px 0;
 }
 
+/* ----- MEdia querys ----- */
 @media screen and (max-width:565px){
+
+    .cardContainer {
+        background-color: #fff;
+    }
+
     .descripcion {
         min-height: 90px;
     }
