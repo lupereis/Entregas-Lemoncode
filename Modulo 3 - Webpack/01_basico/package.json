@@ -8,11 +8,8 @@
     "start": "run-p -l type-check:watch start:dev",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "start:dev": "webpack serve --config webpack.dev.js",
-    "start:prod": "webpack serve --config webpack.prod.js",
-    "build:dev": "webpack --config webpack.dev.js",
-    "build:prod": "webpack --config webpack.prod.js",
-    "build:perf": "npm run type-check && webpack --config webpack.perf.js"
+    "start:dev": "webpack serve --mode development",
+    "build": "webpack --mode development"
   },
   "keywords": [],
   "author": "",
@@ -21,13 +18,9 @@
     "@babel/cli": "^7.24.7",
     "@babel/core": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
-    "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
     "babel-loader": "^9.1.3",
     "css-loader": "^7.1.2",
-    "dotenv-webpack": "^8.1.0",
     "html-loader": "^5.0.0",
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.9.0",
@@ -37,13 +30,7 @@
     "style-loader": "^4.0.0",
     "typescript": "^5.4.5",
     "webpack": "^5.91.0",
-    "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.4",
-    "webpack-merge": "^5.10.0"
-  },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "webpack-dev-server": "^5.0.4"
   }
 }

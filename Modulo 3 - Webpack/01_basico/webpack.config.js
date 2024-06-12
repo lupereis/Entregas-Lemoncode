@@ -8,10 +8,10 @@ const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 export default {
     context: path.resolve(__dirname, "./src"),
     resolve: {
-        extensions: [".js",".ts", ".tsx"],
+        extensions: [".js",".ts"]
     },
     entry: {
-        app: './index.tsx',
+        app: './index.ts',
     },
     output: {
         filename: '[name].[chunkhash].js',
@@ -20,32 +20,20 @@ export default {
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.ts$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
             },
             {
               test: /\.scss$/,
               exclude: /node_modules/,
-              use: [
-                MiniCssExtractPlugin.loader,
-                {
-                  loader: "css-loader",
-                  options: {
-                    modules: {
-                      exportLocalsConvention: "camelCase",
-                      localIdentName: "[path][name]__[local]--[hash:base64:5]",
-                    },
-                  },
-                },
-                "sass-loader",
-              ],
+              use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
             },
             {
                 test: /\.css$/,
                 exclude: /node_modules/,
                 use: [
-                    "style-loader",
+                    MiniCssExtractPlugin.loader,
                     "css-loader"
                 ]
             },

@@ -1,5 +1,5 @@
 import React from "react";
-import * as classes from "./greetComponentStyles.scss";
+import * as classes from "./greetComponent.module.scss";
 import logoImg from "./content/logo_1.png";
 
 export const GreetComponent : React.FC = () => {
@@ -12,5 +12,3 @@ export const GreetComponent : React.FC = () => {
     </div>
   );
 };
-
-console.log(`Api base: ${process.env.API_BASE}`);
